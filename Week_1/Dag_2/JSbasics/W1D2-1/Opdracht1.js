@@ -1,0 +1,15 @@
+console.log('Hello Winc Academy');
+let name = 'Florian';
+console.log(name);
+console.log(5+4);
+let stringEen = 8;
+let stringTwee = 13;
+let stringDrie = stringEen + stringTwee;
+console.log(stringEen + stringTwee);
+console.log(stringEen * stringTwee);
+console.log(stringDrie / stringEen);
+console.log(stringEen % stringDrie);
+var leeftijd = 29;
+console.log(typeof leeftijd);
+var leeftijd = 'negenentwintig';
+console.log(typeof leeftijd);
