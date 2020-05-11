@@ -1,6 +1,6 @@
 const age = 17;
 const isFemale = false;
-const driverStatus = "geen Bob";
+const driverStatus = "Bob";
 
 if (age >= 18) {
 
