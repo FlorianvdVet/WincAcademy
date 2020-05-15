@@ -1,0 +1,66 @@
+#achtergrondKleur {
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-toggle-nav {
+
+    display: flex;
+    background-image: url(menu.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    top: 0;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.openMenu {
+
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.btn-toggle-nav:hover .openMenu{
+
+    visibility: visible;
+    transition: 0.3s ease-in
+
+}
+
+#zijMenu ul {
+
+    list-style: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    padding-left:0;
+    margin-top: 60px;
+    white-space: nowrap;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+#zijMenu ul li {
+
+    white-space: nowrap;
+    line-height: 60px;
+    background-color:white;
+    padding: 12px 16px;
+    cursor:pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+#zijMenu ul li:hover {
+
+    background-color: #ddd;
+    transition: all 0.3s ease-in-out;
+
+}
