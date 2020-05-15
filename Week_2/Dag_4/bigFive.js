@@ -18,11 +18,11 @@ knoppen2.forEach(x => x.addEventListener("click", () => {
 // maak eventlistener aan om single item te verwijderen
 //<button id="remove-first-item-button">Remove the first</button>
 
-const verwijderen = document.querySelector("#remove-first-item-button");
+const deleteOne = document.querySelector("#remove-first-item-button");
 
-console.log(verwijderen);
+console.log(deleteOne);
 
-verwijderen.addEventListener("click", () => {
+deleteOne.addEventListener("click", () => {
     const deleteFirst = dierenGezien.getElementsByClassName("spotted-animals-list-item")[0];
     var verwijderd = dierenGezien.removeChild(deleteFirst);
 });
