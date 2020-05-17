@@ -3,94 +3,144 @@ const knopList = Array.from(knoppen);
 
 const filmLijst = document.getElementById("film-list");
 
-const filmTitels = movies.map(titel => {
-    return titel.Title;
-})
-//console.log(filmTitels);
-
-const filmPosters = movies.map(poster => {
-    return poster.Poster;
-})
-//console.log(filmPosters);
-
 
 const filmsInDom = () => {
-    movies.map((film) => {
-    const newLi = document.createElement("li");
-    filmLijst.appendChild(newLi);
-    const newA = document.createElement("a");
-    newA.href = "http://www.imdb.com/title/" + film.imdbID;
-    newA.target = "_blank";
-    newLi.appendChild(newA);
-    const plaatje = document.createElement("img");
-    plaatje.src = film.Poster;
-    newLi.appendChild(plaatje);
+    movies.forEach(film => {
+    const newItem = document.createElement("li");
+    const newLink = document.createElement("a");
+    const newPoster = document.createElement("img");
+    newLink.href = "http://www.imdb.com/title/" + film.imdbID;
+    newPoster.src = film.Poster;
+    filmLijst.appendChild(newItem).append(newLink);
+    newLink.append(newPoster);
 })};
 
 filmsInDom();
 
-
-const buttonClicked = () => {
-    knopList.forEach(x => x.addEventListener("change", () => {
-        console.log("knop geklikt");
-        (console.log(event.target.value));
-}))};
-
-buttonClicked();
-
-
-const handleOnChangeEvent = () => {
-    knopList.forEach(x => x.addEventListener("change", () => {
+knopList.forEach(x => x.addEventListener("change", () => {
         (console.log(event.target));
-        const filmWissel = event.target.value;
-        switch (filmWissel) {
+        const node = filmLijst
+        switch (event.target.value) {
             case "nieuwste":
                 console.log("Dit zijn de nieuwste films");
+                while (node.firstChild) {
+                node.removeChild(filmLijst.firstChild);
+                }
+                const nieuwsteFilter = movies.filter((movie) => {
+                    return movie.Year >= 2014;
+                });        
+
+                const nieuwsteInDom = () => {
+                    nieuwsteFilter.forEach(film => {
+                    const newItem = document.createElement("li");
+                    const newLink = document.createElement("a");
+                    const newPoster = document.createElement("img");
+                    newLink.href = "http://www.imdb.com/title/" + film.imdbID;
+                    newPoster.src = film.Poster;
+                    filmLijst.appendChild(newItem).append(newLink);
+                    newLink.append(newPoster);
+                })};
+                nieuwsteInDom();
                 break;
+
             case "avengers":
                 console.log("Dit zijn de Avengers films");
-                const avengers = movies.filter(movie => {
+                while (node.firstChild) {
+                node.removeChild(filmLijst.firstChild);
+                }
+                const avengersFilter = movies.filter((movie) => {
                     return movie.Title.includes("Avengers");
-                });
-                filmsInDom(avengers);
+                });           
+                
+                const avengersInDom = () => {
+                    avengersFilter.forEach(film => {
+                    const newItem = document.createElement("li");
+                    const newLink = document.createElement("a");
+                    const newPoster = document.createElement("img");
+                    newLink.href = "http://www.imdb.com/title/" + film.imdbID;
+                    newPoster.src = film.Poster;
+                    filmLijst.appendChild(newItem).append(newLink);
+                    newLink.append(newPoster);
+                })};
+                avengersInDom();
                 break;
+
             case "x-men":
                 console.log("Dit zijn de X-Men films");
-                const xmen = movies.filter(movie => {
-                    return movie.Title.includes("X-men");
-                });
-                filmsInDom(xmen);
+                while (node.firstChild) {
+                node.removeChild(filmLijst.firstChild);
+                }
+
+                const xMenFilter = movies.filter((movie) => {
+                    return movie.Title.includes("X-Men");
+                });        
+
+                const xMenInDom = () => {
+                    xMenFilter.forEach(film => {
+                    const newItem = document.createElement("li");
+                    const newLink = document.createElement("a");
+                    const newPoster = document.createElement("img");
+                    newLink.href = "http://www.imdb.com/title/" + film.imdbID;
+                    newPoster.src = film.Poster;
+                    filmLijst.appendChild(newItem).append(newLink);
+                    newLink.append(newPoster);
+                })};
+                xMenInDom();
                 break;
+
             case "princess":
                 console.log("Dit zijn de Princess films");
-                const princess = movies.filter(movie => {
+                while (node.firstChild) {
+                node.removeChild(filmLijst.firstChild);
+                }
+                const princessFilter = movies.filter((movie) => {
                     return movie.Title.includes("Princess");
-                });
-                filmsInDom(princess);
+                });        
+
+                const princessInDom = () => {
+                    princessFilter.forEach(film => {
+                    const newItem = document.createElement("li");
+                    const newLink = document.createElement("a");
+                    const newPoster = document.createElement("img");
+                    newLink.href = "http://www.imdb.com/title/" + film.imdbID;
+                    newPoster.src = film.Poster;
+                    filmLijst.appendChild(newItem).append(newLink);
+                    newLink.append(newPoster);
+                })};
+                princessInDom();
                 break;
+
             case "batman":
                 console.log("Dit zijn de Batman films");
-                const batman = movies.filter(movie => {
+                while (node.firstChild) {
+                node.removeChild(filmLijst.firstChild);
+                }
+                const batmanFilter = movies.filter((movie) => {
                     return movie.Title.includes("Batman");
-                });
-                filmsInDom(batman);
+                });        
+
+                const batmanInDom = () => {
+                    batmanFilter.forEach(film => {
+                    const newItem = document.createElement("li");
+                    const newLink = document.createElement("a");
+                    const newPoster = document.createElement("img");
+                    newLink.href = "http://www.imdb.com/title/" + film.imdbID;
+                    newPoster.src = film.Poster;
+                    filmLijst.appendChild(newItem).append(newLink);
+                    newLink.append(newPoster);
+                })};
+                batmanInDom();
                 break;
+
             case "alle":
                 console.log("Dit zijn alle films");
+                while (node.firstChild) {
+                node.removeChild(filmLijst.firstChild);
+                }
                 filmsInDom();
                 break;
+                
             default:
                 console.log("Geen films!");
         }
-}))};
-
-handleOnChangeEvent();
-
-/*
-verwijder alle films:
-
-const node = filmLijst;
-while (node.firstChild) {
-    node.removeChild(filmLijst.firstChild);
-}
-*/
+}));
