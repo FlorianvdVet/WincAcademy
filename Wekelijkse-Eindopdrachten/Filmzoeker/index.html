@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Filmzoeker</title>
+    <style type="text/css" src="styles.css"></style>
+    <script defer type="text/javascript" src="movies.js"></script>
+    <script defer type="text/javascript" src="scripts.js"></script>
+  </head>
+
+
+  <body font-family = Georgia>
+    <h1>Filmzoeker. Zoek je film!</h1>
+    <nav>
+      <div>
+          <label for = "alle-films">
+            <input id = "alle-films" value = "alle" type = "radio" name = "film-selector">Alle films
+          </label>  
+          <label for = "nieuwste-films">
+              <input id = "nieuwste-films" value = "nieuwste" type = "radio" name = "film-selector">Nieuwste films (vanaf 2014)
+          </label>
+          <label for = "avengers-films">
+            <input id = "avengers-films" value = "avengers" type = "radio" name = "film-selector">Avengers films
+          </label>
+          <label for = "x-men-films">
+            <input id = "x-men-films" value = "x-men" type = "radio" name = "film-selector">X-men films
+          </label>
+          <label for = "princess-films">
+            <input id = "princess-films" value = "princess" type = "radio" name = "film-selector">Princess films
+          </label>
+          <label for = "batman-films">
+            <input id = "batman-films" value = "batman" type = "radio" name = "film-selector">Batman films
+          </label>
+      </div>
+    </nav>
+    
+      <div>
+        <ul id = "film-list">
+          
+        </ul>
+      </div>
+    
+  </body>
