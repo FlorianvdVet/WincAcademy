@@ -1,0 +1,17 @@
+img {
+    width: 20px;
+    height: auto;
+}
+ul #toDoList {
+    border-bottom: 1px;
+}
+li {
+    list-style-type: circle;
+    flex: 1;
+    border: 100px;
+}
+
+.container {
+    color: darkred;
+    border: 2px;
+}
