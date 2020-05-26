@@ -26,12 +26,12 @@ const addListItem = () => {
     button.innerHTML = '<img src= "trash.jpg">';
     button.addEventListener("click", () => {
         toDoList.removeChild(listItem);
+        deleteData(item);
     })
     listItem.innerHTML = inputValue.value;
     toDoList.appendChild(listItem);
     listItem.appendChild(button);
 };
-
 
 submitBtn.addEventListener("click", () => {
     const inputText = inputValue.value;

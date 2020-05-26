@@ -1,0 +1,55 @@
+/* ul a:first-child:hover {
+    color: lightblue;
+    font-weight: 900;
+}
+
+ul a:nth-child(2):active {
+    color: red;
+    font-style: italic;
+}
+
+ul a:last-child:visited {
+    color: yellow;
+}
+
+ul input:focus {
+    color: green;
+    font-size: 20px;
+} */
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: darkblue;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li .currentPage {
+    background-color: darkgray;
+}
+nav ul li:last-child:focus {
+   bottom: 0px;
+   border: 5px;
+   border-color: aquamarine;
+}
+
+nav ul li:last-child {
+    margin-top: 10px;
+}
+
+li a:hover {
+  background-color: lightblue;
+}
