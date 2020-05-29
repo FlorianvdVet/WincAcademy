@@ -12,6 +12,12 @@ const functions = {
     user["lastName"] = "Traversy";
     return user;
   },
+
+  addOne:  function (numbers) {
+    // Schrijf hier de functie...
+  },
+  
 };
+
 
 module.exports = functions;
