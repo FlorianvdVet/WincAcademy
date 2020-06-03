@@ -1,48 +1,14 @@
-const isLessThan9Chars = (pw) => {
-  const length = pw.length;
-  if (length < 9) return true;
+const validators = {
+    isShorterThanNine: (password) => password.length < 9,
+    isNotBlank: password => password !== "" && password !== null,
+    hasUpperCase: password => [...password].find(c => c != c.toLowerCase()),
+    hasLowerCase: password => [...password].find(c => c != c.toUpperCase()),
+    hasNumber: password => [...password].find(c => !isNaN(parseInt(c)))
 };
-/* 
-const passwordVerifier = function (password) {
-  // We tellen het aantal requirements waar het wachtwoord aan moet voldoen
-  let score = 0;
-
-  // Voor elke conditie maken we een interne check
-  const isNotBlank = (pw) => {
-    // return boolean
-  };
-
-
-  const hasUppercase = (pw) => {
-    const letters = /[A-Z]/;
-    if (pw.(letters)) {
-      return true;
-    }
-  };
-  const hasLowercase = (pw) => {
-    // return boolean
-  };
-  const hasDigit = (pw) => {
-    // return boolean
-  };
-
-  // Voor elke requirement die waar is, tel 1 punt op
-  if (isNotBlank(password)) score++;
-  if (isLessThan9Chars(password)) score++;
-  if (hasUppercase(password)) score++;
-  if (hasDigit(password)) score++;
-  if (hasLowercase(password)) {
-    score++;
-  } else {
-    // Voor deze requirement maken een uitzondering; reset de score als hier niet aan wordt voldaan
-    score = 0;
-  }
-
-  // Markeer het wachtwoord als valide als er een score van minimaal 3 is
-  return {
-    score: score,
-    valid: score >= 3,
-  };
-}; */
-
-module.exports = passwordVerifier;
+​
+const passwordVerifier = (pw) => {
+    const score = Object.values(validators).reduce((score, validator) => validator(pw) ? score + 1 : score, 0);
+    return validators.hasLowerCase(pw) ? score >= 3 : false
+}
+​
+module.exports = { validators, passwordVerifier };
