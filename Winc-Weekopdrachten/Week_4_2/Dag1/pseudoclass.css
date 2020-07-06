@@ -1,0 +1,50 @@
+.Link1:hover {
+  color: #85bacc;
+  font-weight: bold;
+}
+
+.Link2:active {
+  color: #f13838;
+  font-style: italic;
+}
+
+.Link3:visited {
+  color: #f1f158;
+}
+
+.input:focus {
+  border-width: 5px;
+  border-color: whitesmoke;
+}
+
+.menu {
+  list-style-type: none;
+  margin-left: 0px;
+  padding-left: 0px;
+  overflow: hidden;
+  background-color: #0b0b79;
+}
+
+.input {
+  margin-top: 12px;
+}
+
+.currentPage {
+  background-color: #bdb9b9;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #7cbcd1;
+}
