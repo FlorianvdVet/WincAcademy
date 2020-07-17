@@ -1,15 +1,10 @@
 import React from "react";
+import ListItem from "./ListItem";
 
-function SongList(props) {
-  console.log(props);
-
-  return (
-    <div className="songList">
-      <h2>{props.songs.artist}</h2>
-      <p>
-        {props.songs.title} {props.songs.genre} {props.songs.rating}
-      </p>
-    </div>
-  );
-}
+const SongList = (props) => {
+  const newList = props.songs.map((item) => (
+    <ListItem item={item} deleteSong={props.deleteSong} />
+  ));
+  return <>{newList}</>;
+};
 export default SongList;
