@@ -1,17 +1,15 @@
 import React from "react";
 import "./App.css";
-import Container from "./Container";
+import Container from "./Components/Container";
+import Header from "./Components/Header";
+import Footer from "./Components/Footer";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Student Dashboard</h1>
-        <Container />
-      </header>
-      <footer className="App-footer">
-        <p>Onderkant</p>
-      </footer>
+    <div className="main">
+      <Header />
+      <Container />
+      <Footer />
     </div>
   );
 }
